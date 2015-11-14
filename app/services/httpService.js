@@ -17,7 +17,7 @@ define([
 		function addCommonHeader(header, value) {
 			$http.defaults.headers.common[header] = value;
 		}
-		// addCommonHeader("Content-Type", "application/json");
+		addCommonHeader("Content-Type", "application/x-www-form-urlencoded");
 	}])
 	.service('alveoHttpService', ['$http', '$q', '$state', function($http, $q, $state) {
 

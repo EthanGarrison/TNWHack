@@ -33,10 +33,11 @@ define([
 
 		http.post("", {
 			"token": token,
-			"commands": '[{"type": "item_add","args": {"content": "TestTask"}'
+			"seq_no": 0,
+			"resource_types": '["all"]'
 		}).then(function(response) {
 			console.log(response);
-		}).then(function(error) {
+		}, function(error) {
 			console.log(response);
 		})
 	}]);
