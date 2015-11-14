@@ -1,17 +1,22 @@
 {
-	"name": "test-app",
-	"version": "1.0.0",
-	"description": "A test application playground",
-	"author": "Ethan Garrison <egarrison@varickmm.com>",
-	"contributors": [
-		{}
-	],
-	"scripts": {
-		"postinstall": "bower install"
-	},
-	"repository": {},
-	"dependencies": {
-	},
-	"private": true,
-	"license": "MIT"
+  "name": "test-app",
+  "version": "1.0.0",
+  "description": "A test application playground",
+  "author": "Ethan Garrison <egarrison@varickmm.com>",
+  "contributors": [
+    {}
+  ],
+  "scripts": {
+    "postinstall": "bower install"
+  },
+  "repository": {},
+  "dependencies": {
+    "express": "^4.13.3"
+  },
+  "private": true,
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-compass": "^1.0.4"
+  }
 }
