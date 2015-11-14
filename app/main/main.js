@@ -29,7 +29,7 @@ define([
 		var secret = "superSpoooooooky";
 		var scope = "data:read_write";
 
-		var token = "abfa1ecd1bc109f0a965cc577550ef909e03fd60";
+		var token = "e3ce717c188dec1e93be254aac9709859438a609";
 
 		http.post("", {
 			"token": token,
