@@ -3,8 +3,8 @@
 define([
 	"angular",
 	"uiRouter",
-	"app/services/httpService",
-	"app/main/main"
+	"services/httpService",
+	"controllers/main"
 ], function(angular, uiRouter) {
 	return angular.module("myApp",[
 		"ui.router",
