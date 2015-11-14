@@ -2,21 +2,23 @@
 'use strict';
 
 requirejs.config({
-    "baseUrl"	: "lib",
-    "paths"		: {
-        "app"		: "..",
-        "angular"	: "angular/angular.min",
-        "uiRouter"	: "angular-ui-router/release/angular-ui-router.min"
-    },
-    "shim"		: {
-    	"angular"	: {
-    		"exports"	: "angular"
-    	},
-    	"uiRouter" : ["angular"]
-    },
-    "priority"	: [
-    	"angular"
-    ]
+	"baseUrl"	: "lib",
+	"paths"		: {
+		"app"			: "..",
+		"controllers"	: "../scripts/controllers",
+		"services"		: "../scripts/services",
+		"angular"		: "angular/angular.min",
+		"uiRouter"		: "angular-ui-router/release/angular-ui-router.min"
+	},
+	"shim"		: {
+		"angular"	: {
+			"exports"	: "angular"
+		},
+		"uiRouter" : ["angular"]
+	},
+	"priority"	: [
+		"angular"
+	]
 });
 
 require([

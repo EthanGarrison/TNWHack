@@ -1,5 +1,0 @@
-{
-	"analytics"	: false,
-	"timeout"	: 120000,
-	"directory"	: "app/lib"
-}
