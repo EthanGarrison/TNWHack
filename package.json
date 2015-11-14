@@ -1,0 +1,18 @@
+{
+	"name": "test-app",
+	"version": "1.0.0",
+	"description": "A test application playground",
+	"author": "Ethan Garrison <egarrison@varickmm.com>",
+	"contributors": [
+		{}
+	],
+	"scripts": {
+		"postinstall": "bower install"
+	},
+	"repository": {},
+	"dependencies": {
+		"gulp":       "3.9.0"
+	},
+	"private": true,
+	"license": "MIT"
+}

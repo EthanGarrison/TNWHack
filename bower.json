@@ -1,0 +1,12 @@
+{
+	"name"			: "test-app",
+	"description"	: "Test application",
+	"version"		: "0.3.0",
+	"license"		: "MIT",
+	"private"		: true,
+	"dependencies"	: {
+		"angular"			: "1.4.x",
+		"angular-ui-router"	: "0.2.x",
+	    "requirejs"			: "2.1.x"
+	}
+}
