@@ -11,8 +11,6 @@
 	},
 	"repository": {},
 	"dependencies": {
-		"gulp":		"3.9.0",
-		"bower":	"1.5.x"
 	},
 	"private": true,
 	"license": "MIT"
