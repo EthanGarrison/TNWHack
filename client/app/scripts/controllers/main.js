@@ -16,7 +16,7 @@ define([
 	function ctrl(scope, $state, http) {
 		scope.data = "Hello";
 
-		http.get("/api/getItems").then(function(response) {
+		http.get("/api/todoist/getItems").then(function(response) {
 			console.log(response);
 		}, function(error) {
 			console.err(error);

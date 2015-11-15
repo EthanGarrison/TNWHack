@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
+var todoistRouter = require('./routes/todoist')
 var readings = require('./routes/readings');
 
 var app = express();
@@ -19,7 +20,7 @@ app.use(cookieParser());
 
 app.use(readings);
 // app.use(routes);
-app.use("/api", users);
+app.use("/api/todoist", todoistRouter);
 
 /**
  * Development Settings
