@@ -1,5 +1,6 @@
 /node_modules
 /client/node_modules
+/server/node_modules
 /client/app/lib/*
 .DS_Store
 server/npm-debug.log
