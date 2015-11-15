@@ -11,7 +11,9 @@
 
 
   <label for="sensor">Sensor</label>
-  <input id="sensor" type="text" ng-model="data.sensor" required />
+  <select ng-options="sensor.value as sensor.name for sensor in sensors" ng-model="data.sensor">
+    <option value="" disabled>None</option>
+  </select>
   <br />
 
 

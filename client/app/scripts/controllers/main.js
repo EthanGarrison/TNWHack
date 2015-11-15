@@ -16,6 +16,12 @@ define([
 	function ctrl(scope, $state, http) {
 		scope.data = {};
 
+		scope.sensors = [
+			{"name": "Barometer",		"value": "baro_pressure"},
+			{"name": "Light Intensity",	"value": "lux"},
+			{"name": "Temperature",		"value": "temperature"}
+		];
+
 		scope.submit = function() {
 			if(scope.taskForm.$valid) {
 				http.post("/userVar", scope.data)
