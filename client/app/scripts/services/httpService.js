@@ -8,10 +8,9 @@
  * the default headers will not screw anything up.
  ***************************************************************************/
 define([
-	"angular",
-	"uiRouter",
+	"angular"
 ],function(angular) {
-	return angular.module("alveoHttp",['ui.router'])
+	return angular.module("alveoHttp",[])
 	.run(['$http', '$window', function($http, $window) {
 		// function getToken() {
 		// 	return $window.localStorage.tokenKey || "";
@@ -22,8 +21,6 @@ define([
 		addCommonHeader("Content-Type", "application/x-www-form-urlencoded");
 	}])
 	.service('alveoHttpService', ['$http', '$q', '$state', function($http, $q, $state) {
-
-		var server = "https://todoist.com/API/v6/sync";
 
 		function send(url, method, params) {
 			var deferred = $q.defer();
@@ -48,17 +45,17 @@ define([
 
 		// POST Request Method
 		this.post = function(url, json) {
-			return send(server+url, "POST", json);
+			return send(url, "POST", json);
 		};
 
 		// PUT Request Method
 		this.put = function(url, json) {
-			return send(server+url, "PUT", json);
+			return send(url, "PUT", json);
 		};
 
 		// DELETE Request Method
 		this['delete'] = function(url, json) {
-			return send(server+url, "DELETE", json);
+			return send(url, "DELETE", json);
 		};
 	}]);
 });

@@ -18,6 +18,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use(readings);
+// app.use(routes);
+app.use("/api", users);
+
 /**
  * Development Settings
  */
@@ -30,11 +33,11 @@ if (app.get('env') === 'development') {
 
     // Error Handling
     app.use(function(err, req, res, next) {
-        res.status(err.status || 500);
-        res.render('error', {
-            message: err.message,
-            error: err
-        });
+        // res.status(err.status || 500);
+        // res.render('error', {
+        //     message: err.message,
+        //     error: err
+        // });
     });
 }
 
