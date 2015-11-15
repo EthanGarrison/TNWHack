@@ -16,11 +16,11 @@ define([
 	function ctrl(scope, $state, http) {
 		scope.data = "Hello";
 
-		http.get("/api/todoist/getItems").then(function(response) {
-			console.log(response);
-		}, function(error) {
-			console.err(error);
-		});
+		// http.post("/api/todoist/createTask", {"content": "TestTask"}).then(function(response) {
+		// 	console.log(response);
+		// }, function(error) {
+		// 	console.err(error);
+		// });
 	}
 
 	return angular.module("myApp.main",[

@@ -4,52 +4,68 @@ var q = require('q');
 
 var todoist = {};
 
-todoist.getItems = function() {
-	var options = {
-		hostname: 'todoist.com',
-		path: '/API/v6/sync',
-		method: 'POST',
-		headers: {
-			'Content-Type': 'application/x-www-form-urlencoded'
-		}
-	};
+var options = {
+	hostname: 'todoist.com',
+	path: '/API/v6/sync',
+	method: 'POST',
+	headers: {
+		'Content-Type': 'application/x-www-form-urlencoded'
+	}
+};
 
-	var postData = querystring.stringify({
-		'token' : 'e3ce717c188dec1e93be254aac9709859438a609',
-		'seq_no' : 0,
-		'resource_types' : '["items"]'
-	});
+var token = 'e3ce717c188dec1e93be254aac9709859438a609'
 
-	options.headers['Content-Length'] = postData.length;
-
+function makeRequest(data) {
 	var output = q.defer();
-
-	var request = https.request(options, function(response) {
+	var req = https.request(options, function(response) {
 
 		var result = '';
 
 		response.setEncoding('utf8');
 		response.on('data', function (chunk) {
-			console.log('BODY: ' + chunk);
+			console.log(chunk);
 			result += chunk;
 		});
 		response.on('end', function() {
-			console.log('No more data in response.')
 			output.resolve(result);
-			console.log(result);
 		});
-		// output.resolve(result);
 	});
 
-	request.write(postData);
-	request.end();
+	req.write(data);
+	req.end();
 
-	console.log("Got into getItems");
-	// request.on('error', function() {
-	// 	output.reject("Bad request");
-	// })
+	return output;
+}
 
-	return output.promise;
+todoist.getItems = function() {
+	var postData = querystring.stringify({
+		'token' : token,
+		'seq_no' : 0,
+		'resource_types' : '["items"]'
+	});
+
+	return makeRequest(postData).promise;
+}
+
+// Pass a string to this please
+todoist.createItem = function(data) {
+	var commands = [
+		{
+			"type": "item_add",
+			"args": {
+				"content": data
+			},
+			"uuid": Math.random()+"",
+			"temp_id": Math.random()+""
+		}
+	]
+
+	var postData = querystring.stringify({
+		'token': token,
+		'commands': JSON.stringify(commands)
+	});
+
+	return makeRequest(postData).promise;
 }
 
 module.exports = todoist;
